@@ -36,22 +36,6 @@ PORT=3000
 HOST=your_host_ip
 ```
 
-## Project Structure
-backend/
-├── src/
-│   ├── controllers/
-│   │   └── authController.js
-│   ├── models/
-│   │   ├── users.js
-│   │   └── schedules.js
-│   ├── routes/
-│   │   └── authRoutes.js
-│   ├── utils/
-│   │   └── validate.js
-│   └── app.js
-├── .env
-└── package.json
-
 ## Usage
 - Start the server:
 ```sh
