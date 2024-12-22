@@ -36,7 +36,7 @@ class AuthController {
         return res.status(401).json({ message: 'Invalid credentials' });
       }
       const token = jwt.sign({ id: user._id, username: user.username }, process.env.JWT_SECRET, {
-        expiresIn: '1h',
+        expiresIn: '7d',
       });
       res.status(200).json({ message: 'Login successful', data: { token } });
     } catch (error) {
