@@ -8,7 +8,7 @@ const options = {
   },
   baseDir: __dirname,
   filesPattern: './routes/*.js',
-  swaggerUIPath: '/docs',
+  swaggerUIPath: '/',
   exposeSwaggerUI: true,
   exposeApiDocs: false,
   apiDocsPath: '/v3/api-docs',

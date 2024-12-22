@@ -24,10 +24,6 @@ app.use('/api/auth', authRoutes);
 app.use('/api/todos', todoRoutes);
 app.use('/api/profile', profileRoutes);
 
-app.get("/", (req, res) => {
-  res.send({ status: "mulai" })
-})
-
 setupSwagger(app);
 
 app.listen(PORT, HOST, () => {
