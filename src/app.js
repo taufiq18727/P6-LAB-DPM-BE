@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors'); 
 const authRoutes = require('./routes/authRoutes');
+const todoRoutes = require('./routes/todoRoutes');
+const profileRoutes = require('./routes/profileRoutes');
+const setupSwagger = require('./swagger');
 
 dotenv.config();
 
@@ -18,10 +21,14 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch(err => console.error('MongoDB connection error:', err));
 
 app.use('/api/auth', authRoutes);
+app.use('/api/todos', todoRoutes);
+app.use('/api/profile', profileRoutes);
 
 app.get("/", (req, res) => {
   res.send({ status: "mulai" })
 })
+
+setupSwagger(app);
 
 app.listen(PORT, HOST, () => {
   console.log(`Server is running on http://${HOST}:${PORT}`);
